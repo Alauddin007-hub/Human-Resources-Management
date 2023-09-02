@@ -143,7 +143,10 @@ $designations=$conn->getAll("SELECT * FROM `employee_designations`");
                                     </div>
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4b6380ec3cd0c5f12bd73cdb29b2434fe9ab32ee
                                     <div class="item form-group">
                                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="email">Confirm Email <span class="required">*</span>
                                         </label>

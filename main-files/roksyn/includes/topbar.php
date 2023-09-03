@@ -399,6 +399,12 @@
                   settings
                   </span></a>
                </li>
+               <li>
+                  <a class="nav-link"  href="logout.php" data-bs-toggle="offcanvas" role="button">
+                    <span class="fas fa-user">logout
+                    </span></i>
+                  </a>
+                </li>
             </ul>
        </nav>
      </header>

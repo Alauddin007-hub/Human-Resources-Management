@@ -51,9 +51,9 @@
                   <div class="form-body mt-4" >
                   <?php 
                     session_start();
-                    if (isset($_SESSION['err'])) {
-                        echo $_SESSION['err'];
-                        unset($_SESSION['err']);
+                    if (isset($_SESSION['msg'])) {
+                        echo $_SESSION['msg'];
+                        //unset($_SESSION['msg']);
                     }
                     ?>
 										<form class="row g-3" action="login.php" method="post">

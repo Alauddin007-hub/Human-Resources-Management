@@ -6,11 +6,7 @@
         $password = sha1($password);
         //echo "SELECT name, email, password FROM users WHERE email='$email' AND password = '$password' ";
 
-<<<<<<< HEAD
-        $sql = "SELECT * FROM user WHERE email='$email' AND password = '$password' ";
-=======
         $sql = "SELECT  email, password FROM users WHERE email='$email' AND password = '$password' ";
->>>>>>> 616da40cc0b2d7025864089177b82b61e5c215f5
         $result = $db->query($sql);
         //$row = $result->fetch_object();
 

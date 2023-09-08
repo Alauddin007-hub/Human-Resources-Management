@@ -201,20 +201,8 @@
                     </li>
                   </ul>
                 </li>
-                <li>
-                  <a href="javascript:;">
-                    <div class="parent-icon"><span class="material-symbols-outlined">receipt_long</span>
-                    </div>
-                    <div class="menu-title">Documentation</div>
-                  </a>
-                </li>
-                <li>
-                  <a href="javascript:;">
-                    <div class="parent-icon"><span class="material-symbols-outlined">shop</span>
-                    </div>
-                    <div class="menu-title">Support</div>
-                  </a>
-                </li>
+                
+                
               </ul>
               <!--end navigation-->
 

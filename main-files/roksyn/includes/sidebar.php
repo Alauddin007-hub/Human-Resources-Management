@@ -28,14 +28,9 @@
                     <div class="menu-title">Application</div>
                   </a>
                   <ul>
-                    <li> <a href="app-emailbox.html"><span class="material-symbols-outlined">arrow_right</span>Email</a>
+                    <li> <a href="app-emailbox.php"><span class="material-symbols-outlined">arrow_right</span>Email</a>
                     </li>
-                    <li> <a href="app-chat-box.html"><span class="material-symbols-outlined">arrow_right</span>Chat Box</a>
-                    </li>
-                    <li> <a href="app-file-manager.html"><span class="material-symbols-outlined">arrow_right</span>File Manager</a>
-                    </li>
-                    <li> <a href="app-contact-list.html"><span class="material-symbols-outlined">arrow_right</span>Contatcs</a>
-                    </li>
+                    
                     
                     
                     
@@ -73,6 +68,15 @@
                     <div class="parent-icon"><span class="material-symbols-outlined">backup_table</span>
                     </div>
                     <div class="menu-title">Event</div>
+                  </a>
+                  <ul>
+                    <li> <a href="table-datatable.php"><span class="material-symbols-outlined">arrow_right</span>Data Table</a>
+                    </li>
+                  </ul>
+                  <a class="has-arrow" href="javascript:;">
+                    <div class="parent-icon"><span class="material-symbols-outlined">backup_table</span>
+                    </div>
+                    <div class="menu-title">Notices</div>
                   </a>
                   <ul>
                     <li> <a href="table-datatable.php"><span class="material-symbols-outlined">arrow_right</span>Data Table</a>
@@ -120,30 +124,8 @@
                     <div class="menu-title">User Profile</div>
                   </a>
                 </li>
-                <li>
-                  <a href="timeline.html">
-                    <div class="parent-icon"><span class="material-symbols-outlined">hotel_class</span>
-                    </div>
-                    <div class="menu-title">Timeline</div>
-                  </a>
-                </li>
-                <li>
-                  <a class="has-arrow" href="javascript:;">
-                    <div class="parent-icon"><span class="material-symbols-outlined">warning</span>
-                    </div>
-                    <div class="menu-title">Errors</div>
-                  </a>
-                  <ul>
-                    <li> <a href="pages-error-403.html" target="_blank"><span class="material-symbols-outlined">arrow_right</span>403 Error</a>
-                    </li>
-                    <li> <a href="pages-error-404.html" target="_blank"><span class="material-symbols-outlined">arrow_right</span>404 Error</a>
-                    </li>
-                    <li> <a href="pages-error-500.html" target="_blank"><span class="material-symbols-outlined">arrow_right</span>500 Error</a>
-                    </li>
-                    <li> <a href="pages-coming-soon.html" target="_blank"><span class="material-symbols-outlined">arrow_right</span>Coming Soon</a>
-                    </li>
-                  </ul>
-                </li>
+                
+                
                 
                 <li class="menu-label">Charts & Maps</li>
                 <li>

@@ -36,44 +36,35 @@
                     </li>
                     <li> <a href="app-contact-list.html"><span class="material-symbols-outlined">arrow_right</span>Contatcs</a>
                     </li>
-                    <li> <a href="app-to-do.html"><span class="material-symbols-outlined">arrow_right</span>Todo List</a>
-                    </li>
-                    <li> <a href="app-invoice.html"><span class="material-symbols-outlined">arrow_right</span>Invoice</a>
-                    </li>
-                    <li> <a href="app-fullcalender.html"><span class="material-symbols-outlined">arrow_right</span>Calendar</a>
-                    </li>
+                    
+                    
+                    
                   </ul>
                 </li>
                 
                 
                 <!--  -->
-                <li class="menu-label">Forms & Tables</li>
+                <li class="menu-label">Employee info</li>
                 <li>
                   <a class="has-arrow" href="javascript:;">
                     <div class="parent-icon"><span class="material-symbols-outlined">diamond</span>
                     </div>
-                    <div class="menu-title">Forms</div>
+                    <div class="menu-title">Employee</div>
                   </a>
                   <ul>
-                    <li> <a href="form-elements.html"><span class="material-symbols-outlined">arrow_right</span>Form Elements</a>
+                    <li> <a href="employee_list.php"><span class="material-symbols-outlined">arrow_right</span>Employee List</a>
                     </li>
-                    <li> <a href="form-input-group.html"><span class="material-symbols-outlined">arrow_right</span>Input Groups</a>
+                    
+                    
+                   
+                    <li> <a href="form-validations.php"><span class="material-symbols-outlined">arrow_right</span>Add New Employee form</a>
                     </li>
-                    <li> <a href="form-radios-and-checkboxes.html"><span class="material-symbols-outlined">arrow_right</span>Radios & Checkboxes</a>
+                    
+                    
+                    
+                    <li> <a href="form-select2.html"><span class="material-symbols-outlined">arrow_right</span>Attendens</a>
                     </li>
-                    <li> <a href="form-layouts.html"><span class="material-symbols-outlined">arrow_right</span>Forms Layouts</a>
-                    </li>
-                    <li> <a href="form-validations.html"><span class="material-symbols-outlined">arrow_right</span>Form Validation</a>
-                    </li>
-                    <li> <a href="form-wizard.php"><span class="material-symbols-outlined">arrow_right</span>Form Wizard</a>
-                    </li>
-                    <li> <a href="form-file-upload.html"><span class="material-symbols-outlined">arrow_right</span>File Upload</a>
-                    </li>
-                    <li> <a href="form-date-time-pickes.html"><span class="material-symbols-outlined">arrow_right</span>Date Pickers</a>
-                    </li>
-                    <li> <a href="form-select2.html"><span class="material-symbols-outlined">arrow_right</span>Select2</a>
-                    </li>
-                    <li> <a href="form-repeater.html"><span class="material-symbols-outlined">arrow_right</span>Form Repeater</a>
+                    <li> <a href="form-repeater.html"><span class="material-symbols-outlined">arrow_right</span>laves</a>
                     </li>
                   </ul>
                 </li>
@@ -81,7 +72,7 @@
                   <a class="has-arrow" href="javascript:;">
                     <div class="parent-icon"><span class="material-symbols-outlined">backup_table</span>
                     </div>
-                    <div class="menu-title">Tables</div>
+                    <div class="menu-title">Event</div>
                   </a>
                   <ul>
                     <li> <a href="table-datatable.php"><span class="material-symbols-outlined">arrow_right</span>Data Table</a>

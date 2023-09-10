@@ -15,7 +15,7 @@
               <!--navigation-->
               <ul class="metismenu" id="menu">
                 <li>
-                  <a href="index.html">
+                  <a href="admin_home.php">
                     <div class="parent-icon"><span class="material-symbols-outlined">home</span>
                     </div>
                     <div class="menu-title">Dashboard</div>
@@ -70,8 +70,13 @@
                     <div class="menu-title">Event</div>
                   </a>
                   <ul>
-                    <li> <a href="table-datatable.php"><span class="material-symbols-outlined">arrow_right</span>Data Table</a>
+                    <li> <a href="event-entry.php"><span class="material-symbols-outlined">arrow_right</span>Event Entry</a>
                     </li>
+                    <li> <a href="table-datatable.php"><span class="material-symbols-outlined">arrow_right</span>Live Event</a>
+                    </li>
+                    <li> <a href="table-datatable.php"><span class="material-symbols-outlined">arrow_right</span>Event History</a>
+                    </li>
+                    
                   </ul>
                   <a class="has-arrow" href="javascript:;">
                     <div class="parent-icon"><span class="material-symbols-outlined">backup_table</span>
@@ -159,15 +164,15 @@
                   <a class="has-arrow" href="javascript:;">
                     <div class="parent-icon"><span class="material-symbols-outlined">toc</span>
                     </div>
-                    <div class="menu-title">Menu Levels</div>
+                    <div class="menu-title">Salary Pay Role</div>
                   </a>
                   <ul>
-                    <li> <a class="has-arrow" href="javascript:;"><span class="material-symbols-outlined">arrow_right</span>Level One</a>
+                    <li> <a class="has-arrow" href="javascript:;"><span class="material-symbols-outlined">arrow_right</span>Salary Sheet</a>
                       <ul>
-                        <li> <a class="has-arrow" href="javascript:;"><span class="material-symbols-outlined">arrow_right</span>Level Two</a>
+                        <li> <a class="has-arrow" href="javascript:;"><span class="material-symbols-outlined">arrow_right</span>Pay Role</a>
                           <ul>
-                            <li> <a href="javascript:;"><span class="material-symbols-outlined">arrow_right</span>Level Three</a>
-                            </li>
+                            <!-- <li> <a href="javascript:;"><span class="material-symbols-outlined">arrow_right</span>Level Three</a>
+                            </li> -->
                           </ul>
                         </li>
                       </ul>
@@ -187,7 +192,7 @@
                    <img src="assets/images/avatars/01.png" alt="">
                 </div>
                 <div class="user-info">
-                  <h5 class="mb-0 user-name">Jhon Maxwell</h5>
+                  <h5 class="mb-0 user-name">ATM Team</h5>
                   <p class="mb-0 user-designation">UI Engineer</p>
                 </div>
               </div>

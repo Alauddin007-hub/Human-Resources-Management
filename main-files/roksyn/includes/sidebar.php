@@ -4,7 +4,7 @@
               <img src="assets/images/logo-icon.png" class="logo-img" alt="">
             </div>
             <div class="logo-name flex-grow-1">
-              <h5 class="mb-0">Roksyn</h5>
+              <h5 class="mb-0">HRM</h5>
             </div>
             <div class="sidebar-close ">
               <span class="material-symbols-outlined">close</span>
@@ -130,35 +130,6 @@
                   </a>
                 </li>
                 
-                
-                
-                <li class="menu-label">Charts & Maps</li>
-                <li>
-                  <a class="has-arrow" href="javascript:;">
-                    <div class="parent-icon"><span class="material-symbols-outlined">monitoring</span>
-                    </div>
-                    <div class="menu-title">Charts</div>
-                  </a>
-                  <ul>
-                    <li> <a href="charts-apex.html"><span class="material-symbols-outlined">arrow_right</span>Apex</a>
-                    </li>
-                    <li> <a href="charts-chartjs.html"><span class="material-symbols-outlined">arrow_right</span>Chartjs</a>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <a class="has-arrow" href="javascript:;">
-                    <div class="parent-icon"><span class="material-symbols-outlined">distance</span>
-                    </div>
-                    <div class="menu-title">Maps</div>
-                  </a>
-                  <ul>
-                    <li> <a href="map-google-maps.html"><span class="material-symbols-outlined">arrow_right</span>Google Maps</a>
-                    </li>
-                    <li> <a href="map-vector-maps.html"><span class="material-symbols-outlined">arrow_right</span>Vector Maps</a>
-                    </li>
-                  </ul>
-                </li>
                 <li class="menu-label">Others</li>
                 <li>
                   <a class="has-arrow" href="javascript:;">

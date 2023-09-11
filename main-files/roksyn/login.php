@@ -8,13 +8,13 @@
 
         $sql = "SELECT  email, password FROM users WHERE email='$email' AND password = '$password' ";
         $result = $db->query($sql);
-        //$row = $result->fetch_object();
+        $row = $result->fetch_object();
 
-        
-        if($result->num_rows){
         session_start();
-        $_SESSION['name'] = $name;
-        $_SESSION['email'] = $email ;
+        if($result->num_rows){
+        
+        $_SESSION['name'] = $row->$name;
+        $_SESSION['email'] = $row->$email;
         //$_SESSION['password'] = $password ;
         header("Location:admin_home.php");
     } else {

@@ -53,7 +53,7 @@
                     session_start();
                     if (isset($_SESSION['msg'])) {
                         echo $_SESSION['msg'];
-                        //unset($_SESSION['msg']);
+                        unset($_SESSION['msg']);
                     }
                     ?>
 										<form class="row g-3" action="login.php" method="post">

@@ -18,20 +18,17 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
-<<<<<<< HEAD
 -- Database: `hrm`
 --
 
 -- --------------------------------------------------------
 
-=======
 CREATE DATABASE /*!32312 IF NOT EXISTS*/`DB` /*!40100 DEFAULT CHARACTER SET latin1 */;
 
 USE `DB`;
 CREATE DATABASE /*!32312 IF NOT EXISTS*/`DB` /*!40100 DEFAULT CHARACTER SET latin1 */;
 
 USE `DB`;
->>>>>>> 4b6380ec3cd0c5f12bd73cdb29b2434fe9ab32ee
 --
 -- Table structure for table `admins`
 --

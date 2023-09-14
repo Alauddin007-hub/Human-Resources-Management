@@ -1,5 +1,11 @@
 <?php 
      session_start();
-     header("Location:index.php");
+
+     unset ($_SESSION['email']);
+     unset ($_SESSION['passeord']);
+
      session_destroy();
+     
+     header("Location:index.php");
+     
 ?>

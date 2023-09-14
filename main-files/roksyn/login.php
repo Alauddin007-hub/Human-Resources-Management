@@ -13,9 +13,9 @@
         session_start();
         if($result->num_rows){
         
-        $_SESSION['name'] = $row->$name;
+        //$_SESSION['name'] = $row->$name;
         $_SESSION['email'] = $row->$email;
-        //$_SESSION['password'] = $password ;
+        $_SESSION['password'] = $password ;
         header("Location:admin_home.php");
     } else {
         $_SESSION['msg'] = "Your email and password not stored in database";

@@ -72,7 +72,7 @@
                   <ul>
                     <li> <a href="event-entry.php"><span class="material-symbols-outlined">arrow_right</span>Event Entry</a>
                     </li>
-                    <li> <a href="table-datatable.php"><span class="material-symbols-outlined">arrow_right</span>Live Event</a>
+                    <li> <a href="live_event.php"><span class="material-symbols-outlined">arrow_right</span>Live Event</a>
                     </li>
                     <li> <a href="table-datatable.php"><span class="material-symbols-outlined">arrow_right</span>Event History</a>
                     </li>
@@ -84,7 +84,12 @@
                     <div class="menu-title">Notices</div>
                   </a>
                   <ul>
-                    <li> <a href="table-datatable.php"><span class="material-symbols-outlined">arrow_right</span>Data Table</a>
+                    <li> <a href="notice.php"><span class="material-symbols-outlined">arrow_right</span>Notice History</a>
+                    </li>
+                  </ul>
+
+                  <ul>
+                    <li> <a href="notice_entry.php"><span class="material-symbols-outlined">arrow_right</span>Notice Entry</a>
                     </li>
                   </ul>
                 </li>

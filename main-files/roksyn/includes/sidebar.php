@@ -74,7 +74,7 @@
                     </li>
                     <li> <a href="live_event.php"><span class="material-symbols-outlined">arrow_right</span>Live Event</a>
                     </li>
-                    <li> <a href="table-datatable.php"><span class="material-symbols-outlined">arrow_right</span>Event History</a>
+                    <li> <a href="events_history.php"><span class="material-symbols-outlined">arrow_right</span>Event History</a>
                     </li>
                     
                   </ul>

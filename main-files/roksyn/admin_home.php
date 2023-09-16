@@ -1,4 +1,12 @@
-<?php $db = new mysqli("localhost","root", "", "hrm_project"); ?>
+<?php $db = new mysqli("localhost","root", "", "hrm_project");
+session_start();
+if (!isset($_SESSION['email'])) {
+  header("Location:index.php");
+  
+}
+
+?>
+
 <!doctype html>
 <html lang="en" data-bs-theme="dark">
   <head>
@@ -27,6 +35,7 @@
      
   </head>
   <body>
+
 
     <!--start header-->
      <?php require_once("includes/topbar.php"); ?>

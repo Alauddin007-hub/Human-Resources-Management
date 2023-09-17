@@ -1,0 +1,118 @@
+create or replace PROCEDURE approve_leave_days_cal3 (p_emp_id     IN NUMBER,
+                                                     p_leave_id   IN NUMBER)
+IS
+   CURSOR c
+   IS
+      SELECT days, APPR_DAYS, APPROVED_PERSON
+        FROM leave_application
+       WHERE     emp_id = p_emp_id
+             AND leave_id = p_leave_id
+             AND NVL (APPR_STATUS, 0) != 1;         --111-           --consume
+
+   CURSOR d
+   IS
+      SELECT days, TYPE_NUMBER
+        FROM leave_details
+       WHERE emp_id = p_emp_id AND TYPE_NUMBER = p_leave_id;
+
+
+
+   --for insert data from next value of top leave balance
+   v_rest_balance   NUMBER;
+   v_approve_days   NUMBER;
+   v_another_days   NUMBER;
+   v_days number;
+   v_days2 number;
+   v_another_leave_days number;
+   v_another_leave_id   number;
+   v_sum_days number;
+   v_LEAVE_APP_ID number;
+
+
+-------------------------------------
+
+BEGIN
+   FOR i IN c
+   LOOP
+      FOR l IN d
+      LOOP
+    begin
+       SELECT SUM (days) into 
+               v_sum_days
+                FROM leave_application
+               WHERE     emp_id = p_emp_id
+                     AND leave_id = p_leave_id
+                     AND NVL (APPR_STATUS, 0) = 1
+            GROUP BY p_emp_id, p_leave_id;
+            exception when no_data_found then
+            null;
+
+            end;
+
+              V_days:=l.days-nvl(v_sum_days,0);--7-4=3//4-0
+
+         IF V_days >= i.days  --4>6                                     --7>3,7>2,7>1
+         THEN
+            UPDATE leave_application
+               SET APPR_DAYS = i.days,
+                   appr_status = 1
+             WHERE     emp_id = p_emp_id
+                   AND leave_id = p_leave_id
+                   AND NVL (APPR_STATUS, 0) != 1;
+
+            COMMIT;
+
+
+
+ ELSIF V_days < i.days then---3<4//4<6
+
+ UPDATE leave_application
+               SET APPR_DAYS = V_days,
+                   appr_status = 1
+             WHERE     emp_id = p_emp_id
+                   AND leave_id = p_leave_id
+                   AND NVL (APPR_STATUS, 0) != 1;
+
+
+  V_days2:=i.days-nvl(V_days,0);--4-3
+
+
+   SELECT days, TYPE_NUMBER into v_another_leave_days,v_another_leave_id
+        FROM leave_details
+       WHERE emp_id = p_emp_id 
+       --AND 
+       and TYPE_NUMBER NOT IN (SELECT leave_id
+                                      FROM leave_application
+                                     WHERE emp_id = p_emp_id and  rest_leave_balance (leave_id, emp_id) <=0 
+                                     and nvl(APPR_STATUS,0) =1 )
+                                                               
+       order by days desc
+       fetch first 1 row only;-----------
+
+
+       
+
+       select nvl(max(LEAVE_APP_ID),0)+1 into v_LEAVE_APP_ID from leave_application;
+
+       insert into leave_application(LEAVE_APP_ID,
+EMP_ID,
+LEAVE_ID,
+--APPROVED_PERSON,
+DAYS,
+APPR_DAYS,
+APPR_STATUS)
+values(v_LEAVE_APP_ID,p_emp_id,v_another_leave_id,V_days2,null,null);
+commit;
+ UPDATE leave_application
+               SET APPR_DAYS = V_days2,
+                   appr_status = 1
+
+             WHERE     emp_id = p_emp_id
+                   AND leave_id = v_another_leave_id
+                   AND NVL (APPR_STATUS, 0) != 1;
+                   commit;
+         END IF;
+      END LOOP;
+   END LOOP;
+END;
+/

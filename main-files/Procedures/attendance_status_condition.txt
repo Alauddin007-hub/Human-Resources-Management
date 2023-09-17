@@ -1,0 +1,72 @@
+**********************************************************************************Attendance Procedure type 1**********************************************************
+create or replace PROCEDURE atten_status (p_emp_id IN NUMBER, p_atten_date in date)
+IS
+   v_intime    TIMESTAMP;
+   v_outtime   TIMESTAMP;
+BEGIN
+   SELECT in_time, out_time
+     INTO v_intime, v_outtime
+     FROM test_attendance
+    WHERE emp_id = p_emp_id
+    and atten_date = p_atten_date;
+
+   IF 
+   to_char(v_intime,'HH24:Mi') between '08:00' and '09:15'
+   and  to_char(v_outtime,'HH24:Mi') between '17:00' and '18:00'
+   THEN
+     Update test_attendance
+     set status = 'Present'
+     WHERE emp_id = p_emp_id
+       and atten_date = p_atten_date;
+    Else
+      UPDATE test_attendance
+         SET status = 'Absent'
+       WHERE emp_id = p_emp_id
+       and atten_date = p_atten_date;
+   END IF;
+
+END;
+/
+
+
+**********************************************************************************Attendance Procedure type 2****************************************************-*****
+create or replace PROCEDURE atten_status_2 (p_emp_id       IN NUMBER, 
+                                          p_atten_date   IN DATE) 
+IS 
+   v_intime    TIMESTAMP; 
+   v_outtime   TIMESTAMP; 
+BEGIN 
+   SELECT in_time, out_time 
+     INTO v_intime, v_outtime 
+     FROM test_attendance 
+    WHERE emp_id = p_emp_id AND atten_date = p_atten_date; 
+ 
+   IF     TO_CHAR (v_intime, 'HH24:Mi') BETWEEN '08:00' AND '09:15' 
+      AND TO_CHAR (v_outtime, 'HH24:Mi') BETWEEN '17:00' AND '17:15' 
+   THEN 
+      UPDATE test_attendance 
+         SET status = 'Present' 
+       WHERE emp_id = p_emp_id AND atten_date = p_atten_date; 
+   ELSIF     TO_CHAR (v_intime, 'HH24:Mi') BETWEEN '09:15' AND '12:15' 
+         AND TO_CHAR (v_outtime, 'HH24:Mi') BETWEEN '17:00' AND '17:15' 
+   THEN 
+      UPDATE test_attendance 
+         SET status = 'Late Arrive' 
+       WHERE emp_id = p_emp_id AND atten_date = p_atten_date; 
+
+ elsif    TO_CHAR (v_intime, 'HH24:Mi') BETWEEN '08:00' AND '09:15' 
+      AND TO_CHAR (v_outtime, 'HH24:Mi') BETWEEN '16:00' AND '16:30' 
+   THEN 
+      UPDATE test_attendance 
+         SET status = 'Early Departure' 
+       WHERE emp_id = p_emp_id AND atten_date = p_atten_date; 
+
+   ELSE 
+      UPDATE test_attendance 
+         SET status = 'Absent' 
+       WHERE emp_id = p_emp_id AND atten_date = p_atten_date; 
+   END IF; 
+ 
+  
+END;
+/

@@ -1,0 +1,150 @@
+create or replace PROCEDURE gen_all_emp_leave (P_YEAR          IN NUMBER,
+                                               P_DAYS          IN NUMBER,
+                                               P_DAYS2         IN NUMBER,
+                                               P_TYPE_NUMBER   IN NUMBER)
+IS
+   CURSOR c
+   IS
+
+         SELECT emp_id
+        FROM employees
+       WHERE emp_id NOT IN (SELECT DISTINCT x.emp_id FROM leave_details x,leave_master y where x.leave_id=y.leave_id and y.year=P_YEAR and x.type_number=P_TYPE_NUMBER);
+
+   CURSOR d
+   IS
+      SELECT leave_id, emp_id FROM leave_master where year=P_YEAR and year not in ( select year from leave_master where year<>P_YEAR);
+
+  
+
+
+
+
+   v_leave_id       NUMBER;
+   v_LEV_DT_ID      NUMBER;
+   v                NUMBER;
+   v_child_count    NUMBER;
+   v_child_count2   NUMBER;
+   v_first number;
+   v_second number;
+BEGIN
+   BEGIN
+      SELECT COUNT (*)
+        INTO v
+ FROM leave_details x join leave_master y on (x.leave_id=y.leave_id) where y.year=P_YEAR
+            
+              and y.emp_id NOT IN (SELECT DISTINCT x.emp_id FROM leave_details x,leave_master y where x.leave_id=y.leave_id and y.year=P_YEAR  and x.type_number=P_TYPE_NUMBER);
+
+      IF v <= 0
+      THEN
+         FOR i IN c
+         LOOP
+            SELECT NVL (MAX (LEAVE_ID), 0) + 1
+              INTO v_leave_id
+              FROM leave_master;
+
+            INSERT INTO leave_master (LEAVE_ID,
+                                      YEAR,
+                                      DAYS,
+                                      EMP_ID)
+                 VALUES (v_leave_id,
+                         P_YEAR,
+                         P_DAYS,
+                         i.emp_id);
+         END LOOP;
+
+         COMMIT;
+
+         BEGIN
+
+         SELECT COUNT (*)
+           INTO v_first
+           FROM leave_details x,leave_master y where x.leave_id=y.leave_id and y.year=P_YEAR
+                 and x.type_number=P_TYPE_NUMBER
+                  and x.days=P_DAYS2
+      
+                AND x.emp_id NOT IN (
+                SELECT DISTINCT x.emp_id FROM leave_details x,leave_master y where x.leave_id=y.leave_id and y.year=P_YEAR
+                 and x.type_number=P_TYPE_NUMBER
+                 and x.days=P_DAYS2
+                                   
+                                    and x.type_number NOT IN (SELECT x.base_id
+                                                                FROM hr_base_table x
+                                                               WHERE x.base_type =
+                                                                        'LEAVE'));
+
+ if v_first> 0 then
+ return;
+ else
+        
+            FOR l IN d
+            LOOP
+               SELECT NVL (MAX (LEV_DT_ID), 0) + 1
+                 INTO v_LEV_DT_ID
+                 FROM leave_details;
+insert into error(id,name)
+values(1,'pass');
+               INSERT INTO leave_details (LEV_DT_ID,
+                                          LEAVE_ID,
+                                          DAYS,
+                                          TYPE_NUMBER,
+                                          emp_id)
+                    VALUES (v_LEV_DT_ID,
+                            l.leave_id,
+                            P_DAYS2,
+                            P_TYPE_NUMBER,
+                            l.emp_id);
+            END LOOP;
+end if;
+         END;
+        
+      ELSE
+          SELECT COUNT (*)
+           INTO v_second
+           FROM leave_details x,leave_master y where x.leave_id=y.leave_id and y.year=P_YEAR
+                 and x.type_number=P_TYPE_NUMBER
+                  and x.days=P_DAYS2
+        
+                AND x.emp_id NOT IN (
+                SELECT DISTINCT x.emp_id FROM leave_details x,leave_master y where x.leave_id=y.leave_id and y.year=P_YEAR
+                 and x.type_number=P_TYPE_NUMBER
+                 and x.days=P_DAYS2
+                                    
+                                    and x.type_number NOT IN (SELECT x.base_id
+                                                                FROM hr_base_table x
+                                                               WHERE x.base_type =
+                                                                        'LEAVE'));
+if v_second > 0 then
+return;
+else
+         SELECT COUNT (*)
+           INTO v_child_count
+           FROM leave_details
+          WHERE TYPE_NUMBER = P_TYPE_NUMBER;
+
+        
+            BEGIN
+               FOR l IN d
+               LOOP
+                  SELECT NVL (MAX (LEV_DT_ID), 0) + 1
+                    INTO v_LEV_DT_ID
+                    FROM leave_details;
+                    insert into error(id,name)
+values(2,'pass');
+
+                  INSERT INTO leave_details (LEV_DT_ID,
+                                             LEAVE_ID,
+                                             DAYS,
+                                             TYPE_NUMBER,
+                                             emp_id)
+                       VALUES (v_LEV_DT_ID,
+                               l.leave_id,
+                               P_DAYS2,
+                               P_TYPE_NUMBER,
+                               l.emp_id);
+               END LOOP;
+            END;
+        end if;
+      END IF;
+   END;
+END;
+/

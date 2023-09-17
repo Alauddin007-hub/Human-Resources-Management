@@ -56,11 +56,11 @@
 											</div>
 											
 											<div class="col-12">
-												<label for="inputSelectCountry" class="form-label">Intime or Outtime</label>
+												<label for="inputSelectCountry" class="form-label">In-time or Out-time</label>
 												<select class="form-select" id="inputSelectCountry" aria-label="Default select example">
 													<option selected="disable">Select one</option>
-													<option value="1">Intime</option>
-													<option value="2">Outtime</option>
+													<option value="1">In-time</option>
+													<option value="2">Out-time</option>
 													
 												</select>
 											</div>

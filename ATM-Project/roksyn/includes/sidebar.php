@@ -1,7 +1,7 @@
 <aside class="sidebar-wrapper">
           <div class="sidebar-header">
             <div class="logo-icon">
-              <img src="assets/images/logo-icon.png" class="logo-img" alt="">
+              <img src="img/SAVE_20230918_054228.jpg" class="logo-img" alt="">
             </div>
             <div class="logo-name flex-grow-1">
               <h5 class="mb-0">HRM</h5>
@@ -52,7 +52,7 @@
                     
                     
                    
-                    <li> <a href="form-validations.php"><span class="material-symbols-outlined">arrow_right</span>Add New Employee form</a>
+                    <li> <a href="new_employee_entry.php"><span class="material-symbols-outlined">arrow_right</span>Add New Employee form</a>
                     </li>
                     
                     

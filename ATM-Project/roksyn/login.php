@@ -14,10 +14,9 @@
         
         $_SESSION['name'] = $row->name;
         $_SESSION['email'] = $row->email;
-        
         header("Location:admin_home.php");
     } else {
-        $_SESSION['msg'] = "Your email and password not stored in database";
+        $_SESSION['error_msg'] = "Your email and password not stored in database";
         header("Location:index.php");
     }
     

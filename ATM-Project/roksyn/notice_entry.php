@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>HRM</title>
+    <link href="img/icon.jpg" rel="icon">
 
     <!--plugins-->
     <link href="assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet">
@@ -75,13 +76,14 @@
                     <div class="col-lg-8 mx-auto">
 						<div class="card">
 							<div class="card-header px-4 py-3 bg-transparent">
-								<h5 class="mb-0">jQuery Validation</h5>
+								<h5 class="mb-0">Notice Entry</h5>
 							</div>
+
 							<?php 
 							if(isset($_POST['submit2'])){
 								extract($_POST);
 							}
-							$sql ="INSERT INTO notices VALUES(NULL, '$sub', '$date', '$time' , '$des')" ;
+							$sql = "INSERT INTO notices VALUES(NULL, '$subject', '$date', '$time' , '$des')" ;
 
 							$db->query($sql);
 							
@@ -92,7 +94,7 @@
 									<div class="row mb-3">
 										<label for="input35" class="col-sm-3 col-form-label">Subject</label>
 										<div class="col-sm-9">
-											<input type="text" class="form-control" id="input35" name="sub" placeholder="Enter Your Name">
+											<input type="text" class="form-control" id="input35" name="subject" placeholder="Enter Your Name">
 										</div>
 									</div>
 									<div class="row mb-3">

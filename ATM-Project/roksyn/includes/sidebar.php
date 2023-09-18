@@ -78,20 +78,23 @@
                     </li>
                     
                   </ul>
+                  
+                </li>
+                <li>
                   <a class="has-arrow" href="javascript:;">
-                    <div class="parent-icon"><span class="material-symbols-outlined">backup_table</span>
-                    </div>
-                    <div class="menu-title">Notices</div>
-                  </a>
-                  <ul>
-                    <li> <a href="notice.php"><span class="material-symbols-outlined">arrow_right</span>Notice History</a>
-                    </li>
-                  </ul>
+                      <div class="parent-icon"><span class="material-symbols-outlined">backup_table</span>
+                      </div>
+                      <div class="menu-title">Notices</div>
+                    </a>
+                    <ul>
+                      <li> <a href="notice.php"><span class="material-symbols-outlined">arrow_right</span>Notice History</a>
+                      </li>
+                    </ul>
 
-                  <ul>
-                    <li> <a href="notice_entry.php"><span class="material-symbols-outlined">arrow_right</span>Notice Entry</a>
-                    </li>
-                  </ul>
+                    <ul>
+                      <li> <a href="notice_entry.php"><span class="material-symbols-outlined">arrow_right</span>Notice Entry</a>
+                      </li>
+                    </ul>
                 </li>
                 <li class="menu-label">Pages</li>
                 <li>

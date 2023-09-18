@@ -70,13 +70,17 @@
 				<?php
 					if(isset($_POST['submit'])){
 						extract($_POST);
+						//print_r($_POST);
 
-						echo "INSERT INTO employee_info VALUES(NULL, First_name = '$fname', Last_name = '$lname', Phone = '$phone', Email = '$email', Age = '$age', Education_exp = '$digree', Add_exp = '$exp . $position', Bank_name = '$bname', bank_account_number = '$ban')";
+						// echo "INSERT INTO employee_info(First_name, Last_name, Phone, Email, Age, Education_exp, Add_exp, Bank_name,Bank_account_number) VALUES( '$fname','$lname','$phone','$email','$age','$digree', '$exp', '$bname', '$ban')";
 
 						
-						$sql = "INSERT INTO employee_info VALUES(NULL, First_name = '$fname', Last_name = '$lname', Phone = '$phone', Email = '$email', Age = '$age', Education_exp = '$digree', Add_exp = '$exp . $position', Bank_name = '$bname', bank_account_number = '$ban')";
+						$sql = "INSERT INTO employee_info(First_name, Last_name, Phone, Email, Age, Education_exp, Add_exp, Bank_name,Bank_account_number) VALUES( '$fname','$lname','$phone','$email','$age','$digree', '$exp', '$bname', '$ban')";
 
 						$db->query($sql);
+
+
+						// "INSERT INTO employee_info VALUES(NULL, First_name = '$fname', Last_name = '$lname', Phone = '$phone', Email = '$email', Age = '$age', Education_exp = '$digree', Add_exp = '$exp', Bank_name = '$bname', Bank_account_number = '$ban')";
 					}
 					
 
@@ -189,7 +193,7 @@
 									</div>
 									<div class="col-md-12">
 										<div class="d-md-flex d-grid align-items-center gap-3">
-											<button type="submit" class="btn btn-primary px-4">Submit</button>
+											<button type="submit" class="btn btn-primary px-4" name="submit">Submit</button>
 											<button type="reset" class="btn btn-light px-4">Reset</button>
 										</div>
 									</div>

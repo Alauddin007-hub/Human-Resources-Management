@@ -81,11 +81,14 @@
 
 							<?php 
 							if(isset($_POST['submit2'])){
-								extract($_POST);
-							}
-							$sql = "INSERT INTO notices VALUES(NULL, '$subject', '$date', '$time' , '$des')" ;
+                extract($_POST);
+                // print_r("INSERT INTO notices(subject, notice_date, notice_time, description) VALUES('$subject', '$date', '$time', '$des')");
+                echo "INSERT INTO notices(subject, notice_date, notice_time, description) VALUES('$subject', '$date', '$time', '$des')";
 
-							$db->query($sql);
+                $sql = "INSERT INTO notices(subject, notice_date, notice_time, description) VALUES('$subject', '$date', '$time', '$des')";
+                $db->query($sql);
+            }
+            
 							
 							
 							?>
@@ -100,13 +103,16 @@
 									<div class="row mb-3">
 										<label for="input36" class="col-sm-3 col-form-label">Notice Date</label>
 										<div class="col-sm-9">
-											<input type="date" class="form-control" id="input36" name="date" placeholder="Phone No">
+                    <div class="input-group date" id="datepicker">
+                        <input type="text"  class="form-control" id="input36" name="date">
+                      </div>
+											
 										</div>
 									</div>
 									<div class="row mb-3">
 										<label for="input37" class="col-sm-3 col-form-label">Notice Time</label>
 										<div class="col-sm-9">
-											<input type="date" class="form-control" id="input37" name="time" placeholder="Email Address">
+											<input type="time" class="form-control" id="input37" name="time" placeholder="Email Address">
 										</div>
 									</div>
 									<div class="row mb-3">
@@ -263,6 +269,14 @@
 				})
 			})()
 	</script>
+  <script>
+    $(function () {
+      $('#datepicker').datepicker({
+      format:'yyyy-mm-dd'
+    });
+    });
+    
+  </script>
 
     <!--BS Scripts-->
     <script src="assets/js/bootstrap.bundle.min.js"></script>

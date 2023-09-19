@@ -79,8 +79,8 @@
 								<thead>
 									<tr>
 										<th>Subject</th>
-										<th>Event Date</th>
-										<th>Event Time</th>
+										<th>notice Date</th>
+										<th>notice Time</th>
 										<th>description</th>
 										
 									</tr>
@@ -89,14 +89,14 @@
 								<tbody>
 
 								<?php 
-								$sql ="SELECT * FROM live_events";
+								$sql ="SELECT * FROM notices";
 								$result =$db->query($sql);
 
 								while($row= $result->fetch_assoc()){ ?>
 									<tr>
 										<td> <?php echo $row['subject'] ?></td>
-										<td> <?php echo $row['event_date'] ?></td>
-										<td> <?php echo $row['event_time'] ?></td>
+										<td> <?php echo $row['notice_date'] ?></td>
+										<td> <?php echo $row['notice_time'] ?></td>
 										<td> <?php echo $row['description'] ?></td>
 										
 									</tr>
@@ -106,7 +106,6 @@
 
 								
 								
-								?>
 
 									</tbody>
 								<tfoot>

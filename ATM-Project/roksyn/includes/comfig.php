@@ -1,0 +1,1 @@
+<?php $db = new mysqli("localhost","root", "", "hrm_project"); ?>

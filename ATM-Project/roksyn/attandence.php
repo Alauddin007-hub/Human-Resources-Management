@@ -53,12 +53,12 @@
 										<form class="row g-3">
 											<div class="col-12">
 												<label for="inputUsername" class="form-label">employee ID</label>
-												<input type="text" class="form-control" id="inputUsername" placeholder="Enter your employee id">
+												<input type="text" class="form-control" id="inputUsername" name="em_id" placeholder="Enter your employee id">
 											</div>
 											
 											<div class="col-12">
 												<label for="inputSelectCountry" class="form-label">In-time or Out-time</label>
-												<select class="form-select" id="inputSelectCountry" aria-label="Default select example">
+												<select class="form-select" name="in_out" id="inputSelectCountry" aria-label="Default select example">
 													<option selected="disable">Select one</option>
 													<option value="1">In-time</option>
 													<option value="2">Out-time</option>

@@ -1,4 +1,4 @@
- <?php $db = new mysqli("localhost","root", "", "hrm_project"); ?>
+ <?php $db = new mysqli("localhost","hrm", "123456789@$", "hrmproject"); ?>
 <!doctype html>
 <html lang="en" data-bs-theme="dark">
   <head>
@@ -44,13 +44,13 @@
      <main class="page-content">
         <!--breadcrumb-->
 				<div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-					<div class="breadcrumb-title pe-3">Tables</div>
+					<div class="breadcrumb-title pe-3">Employee</div>
 					<div class="ps-3">
 						<nav aria-label="breadcrumb">
 							<ol class="breadcrumb mb-0 p-0">
 								<li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
 								</li>
-								<li class="breadcrumb-item active" aria-current="page">Data Table</li>
+								<li class="breadcrumb-item active" aria-current="page">Attendence</li>
 							</ol>
 						</nav>
 					</div>
@@ -70,7 +70,7 @@
 				<!--end breadcrumb-->
 
         
-				<h6 class="mb-0 text-uppercase">DataTable Import</h6>
+				<h6 class="mb-0 text-uppercase">Attendence List</h6>
 				<hr>
 				<div class="card">
 					<div class="card-body">
@@ -81,41 +81,37 @@
 										<th>ID</th>
 										<th>Name</th>
 										<th>Email</th>
-										<th>Position</th>
-										<th>Age</th>
-										<th>Joining Date</th>
-										<th>Salary</th>
+										<th>Date</th>
+										<th>Time</th>
+									
 									</tr>
 								</thead>
 								<tbody>
 
 								<?php 
-								 $sql ="SELECT * FROM  employee_info";
-								 $result =$db->query($sql);
+								//  $sql ="SELECT FROM  employee_info, attendence values()";
+								//  $result =$db->query($sql);
 
- 								while($row=$result->fetch_assoc()){ ?>
+ 								// while($row=$result->fetch_assoc()){ ?>
 
 									
 									<tr>
-										<td><?php echo $row['Id'] ?></td>
-										<td><?php echo $row['First_name'] . $row['Last_name']?></td>
-										<td><?php echo $row['Email'] ?></td>
-										<td><?php echo $row['designation_id'] ?></td>
-										<td><?php echo $row['Age'] ?></td>
-										<td><?php echo $row['Joining_date'] ?></td>
-										<td><?php echo $row['Salary'] ?></td>
+										<td><?php //echo $row['Id'] ?></td>
+										<td><?php //echo $row['First_name'] . $row['Last_name']?></td>
+										<td><?php //echo $row['Email'] ?></td>
+										<td><?php //echo $row['Date'] ?></td>
+										<td><?php //echo $row['Time'] ?></td>
+										
 									</tr>
-									<?php }?>
+									<?php //}?>
 								</tbody>
 								<tfoot>
 									<tr>
 										<th>ID</th>
 										<th>Name</th>
 										<th>Email</th>
-										<th>Position</th>
-										<th>Age</th>
-										<th>Joining Date</th>
-										<th>Salary</th>
+										<th>Date</th>
+										<th>Time</th>
 									</tr>
 								</tfoot>
 							</table>

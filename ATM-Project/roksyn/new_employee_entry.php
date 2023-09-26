@@ -72,7 +72,7 @@
 						extract($_POST);
 						//print_r($_POST);
 
-						// echo "INSERT INTO employee_info(First_name, Last_name, Phone, Email, Age, Education_exp, Add_exp, Bank_name,Bank_account_number) VALUES( '$fname','$lname','$phone','$email','$age','$digree', '$exp', '$bname', '$ban')";
+						echo "INSERT INTO employee_info(First_name, Last_name, Phone, Email, Age, Education_exp, Add_exp, Bank_name,Bank_account_number) VALUES( '$fname','$lname','$phone','$email','$age','$digree', '$exp', '$bname', '$ban')";
 
 						
 						$sql = "INSERT INTO employee_info(First_name, Last_name, Phone, Email, Age, Education_exp, Add_exp, Bank_name,Bank_account_number) VALUES( '$fname','$lname','$phone','$email','$age','$digree', '$exp', '$bname', '$ban')";

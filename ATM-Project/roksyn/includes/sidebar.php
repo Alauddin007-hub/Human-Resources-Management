@@ -47,22 +47,43 @@
                     <div class="menu-title">Employee</div>
                   </a>
                   <ul>
+                  <li> <a href="new_employee_entry.php"><span class="material-symbols-outlined">arrow_right</span>Add New Employee form</a>
+                    </li>
+
                     <li> <a href="employee_list.php"><span class="material-symbols-outlined">arrow_right</span>Employee List</a>
                     </li>
                     
-                    
-                   
-                    <li> <a href="new_employee_entry.php"><span class="material-symbols-outlined">arrow_right</span>Add New Employee form</a>
+                    <li> <a href="#"><span class="material-symbols-outlined">arrow_right</span>Department</a>
                     </li>
                     
-                    
-                    
-                    <li> <a href="attandence_list.php"><span class="material-symbols-outlined">arrow_right</span>Attendens</a>
+                    <li> <a href="attandence.php"><span class="material-symbols-outlined">arrow_right</span>Attendens</a>
                     </li>
-                    <li> <a href="form-repeater.html"><span class="material-symbols-outlined">arrow_right</span>laves</a>
+                    
+                    <li> <a href="attandence_list.php"><span class="material-symbols-outlined">arrow_right</span>Attendens List</a>
                     </li>
+                    
                   </ul>
                 </li>
+                <li> 
+                  
+                <li>
+                  <a class="has-arrow" href="javascript:;">
+                    <div class="parent-icon"><span class="material-symbols-outlined">backup_table</span>
+                    </div>
+                    <div class="menu-title">Leave Modules</div>
+                  </a>
+                  <ul>
+                    <li> <a href="#"><span class="material-symbols-outlined">arrow_right</span>Leave Detailes</a>
+                    </li>
+                    <li> <a href="live_event.php"><span class="material-symbols-outlined">arrow_right</span>Leave Aplication</a>
+                    </li>
+                    <li> <a href="events_history.php"><span class="material-symbols-outlined">arrow_right</span>Panding Leave Aplications</a>
+                    </li>
+                    
+                  </ul>
+                  
+                </li>
+
                 <li>
                   <a class="has-arrow" href="javascript:;">
                     <div class="parent-icon"><span class="material-symbols-outlined">backup_table</span>

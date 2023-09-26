@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `hrm_project`
+-- Database: `hrmproject`
 --
 
 -- --------------------------------------------------------
@@ -34,7 +34,7 @@ CREATE TABLE `employee_info` (
   `Phone` varchar(20) NOT NULL,
   `Email` varchar(30) NOT NULL,
   `Age` int(11) NOT NULL,
-  `Startdate` date NOT NULL DEFAULT current_timestamp(),
+  `Joining_date` date NOT NULL DEFAULT current_timestamp(),
   `Education_exp` varchar(100) NOT NULL,
   `Add_exp` varchar(100) NOT NULL,
   `department_id` int(11) NOT NULL,

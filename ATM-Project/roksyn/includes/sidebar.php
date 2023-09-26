@@ -88,7 +88,7 @@
                   <a class="has-arrow" href="javascript:;">
                     <div class="parent-icon"><span class="material-symbols-outlined">backup_table</span>
                     </div>
-                    <div class="menu-title">Event</div>
+                    <div class="menu-title">Event Modules</div>
                   </a>
                   <ul>
                     <li> <a href="event-entry.php"><span class="material-symbols-outlined">arrow_right</span>Event Entry</a>
@@ -105,7 +105,7 @@
                   <a class="has-arrow" href="javascript:;">
                       <div class="parent-icon"><span class="material-symbols-outlined">backup_table</span>
                       </div>
-                      <div class="menu-title">Notices</div>
+                      <div class="menu-title">Notices Modules</div>
                     </a>
                     <ul>
                       <li> <a href="notice.php"><span class="material-symbols-outlined">arrow_right</span>Notice History</a>
@@ -117,7 +117,24 @@
                       </li>
                     </ul>
                 </li>
-                <li class="menu-label">Pages</li>
+               
+                <li class="menu-label">Pay Roll Modules</li>
+                <li>
+                  <a class="has-arrow" href="javascript:;">
+                    <div class="parent-icon"><span class="material-symbols-outlined">toc</span>
+                    </div>
+                    <div class="menu-title">Salary Pay Role</div>
+                  </a>
+                  <ul>
+                    <li> <a href="notice_entry.php"><span class="material-symbols-outlined">arrow_right</span>Salary Sheet</a>
+                    </li>
+                  </ul>
+                  <ul>
+                    <li> <a href="notice_entry.php"><span class="material-symbols-outlined">arrow_right</span>Payment</a>
+                    </li>
+                  </ul>
+              </li>
+              <li class="menu-label">Pages</li>
                 <li>
                   <a class="has-arrow" href="javascript:;">
                     <div class="parent-icon"><span class="material-symbols-outlined">lock_open</span>
@@ -158,28 +175,6 @@
                     <div class="menu-title">User Profile</div>
                   </a>
                 </li>
-                
-                <li class="menu-label">Others</li>
-                <li>
-                  <a class="has-arrow" href="javascript:;">
-                    <div class="parent-icon"><span class="material-symbols-outlined">toc</span>
-                    </div>
-                    <div class="menu-title">Salary Pay Role</div>
-                  </a>
-                  <ul>
-                    <li> <a class="has-arrow" href="javascript:;"><span class="material-symbols-outlined">arrow_right</span>Salary Sheet</a>
-                      <ul>
-                        <li> <a class="has-arrow" href="javascript:;"><span class="material-symbols-outlined">arrow_right</span>Pay Role</a>
-                          <ul>
-                            <!-- <li> <a href="javascript:;"><span class="material-symbols-outlined">arrow_right</span>Level Three</a>
-                            </li> -->
-                          </ul>
-                        </li>
-                      </ul>
-                    </li>
-                  </ul>
-                </li>
-                
                 
               </ul>
               <!--end navigation-->

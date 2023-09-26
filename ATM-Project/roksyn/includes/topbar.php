@@ -399,11 +399,11 @@
                   settings
                   </span></a>
                </li>
-               <li>
+               <!-- <li>
                   <a class="nav-link"  href="logout.php" role="button">
                   <i class="fas fa-user"></i> </i>
                   </a>
-                </li>
+                </li> -->
             </ul>
        </nav>
      </header>

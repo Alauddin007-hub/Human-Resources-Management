@@ -43,13 +43,13 @@
      <main class="page-content">
         <!--breadcrumb-->
 				<div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-					<div class="breadcrumb-title pe-3">Employee</div>
+					<div class="breadcrumb-title pe-3">Leave Modules</div>
 					<div class="ps-3">
 						<nav aria-label="breadcrumb">
 							<ol class="breadcrumb mb-0 p-0">
 								<li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
 								</li>
-								<li class="breadcrumb-item active" aria-current="page">Add New Employee Form</li>
+								<li class="breadcrumb-item active" aria-current="page">Leave Process</li>
 							</ol>
 						</nav>
 					</div>
@@ -68,20 +68,20 @@
 				</div>
 				<!--end breadcrumb-->
 				<?php
-					if(isset($_POST['submit'])){
-						extract($_POST);
-						//print_r($_POST);
+					// if(isset($_POST['submit'])){
+					// 	extract($_POST);
+					// 	//print_r($_POST);
 
-						// echo "INSERT INTO employee_info(First_name, Last_name, Phone, Email, Age, Education_exp, Add_exp, Bank_name,Bank_account_number) VALUES( '$fname','$lname','$phone','$email','$age','$digree', '$exp', '$bname', '$ban')";
+					// 	echo "INSERT INTO employee_info(First_name, Last_name, Phone, Email, Age, Education_exp, Add_exp, Bank_name,Bank_account_number) VALUES( '$fname','$lname','$phone','$email','$age','$digree', '$exp', '$bname', '$ban')";
 
 						
-						$sql = "INSERT INTO employee_info(First_name, Last_name, Phone, Email, Age, Education_exp, Add_exp, Bank_name,Bank_account_number) VALUES( '$fname','$lname','$phone','$email','$age','$digree', '$exp', '$bname', '$ban')";
+					// 	$sql = "INSERT INTO employee_info(First_name, Last_name, Phone, Email, Age, Education_exp, Add_exp, Bank_name,Bank_account_number) VALUES( '$fname','$lname','$phone','$email','$age','$digree', '$exp', '$bname', '$ban')";
 
-						$db->query($sql);
+					// 	$db->query($sql);
 
 
 						// "INSERT INTO employee_info VALUES(NULL, First_name = '$fname', Last_name = '$lname', Phone = '$phone', Email = '$email', Age = '$age', Education_exp = '$digree', Add_exp = '$exp', Bank_name = '$bname', Bank_account_number = '$ban')";
-					}
+					//}
 					
 
 				
@@ -94,46 +94,33 @@
 					<div class="col-xl-6 mx-auto">
 						<div class="card">
 							<div class="card-header px-4 py-3 bg-transparent">
-								<h5 class="mb-0">New Employee Add</h5>
+								<h5 class="mb-0">Leaves Process</h5>
 							</div>
 							<div class="card-body p-4">
 								<form class="row g-3 needs-validation" novalidate method="post">
 									<div class="col-md-6">
-										<label for="bsValidation1" class="form-label">First Name</label>
-										<input type="text" class="form-control" id="bsValidation1" placeholder="First Name" name="fname" value="Jhon" required>
+										<label for="bsValidation1" class="form-label">Year</label>
+										<input type="text" class="form-control" id="bsValidation1" placeholder="Year" name="fname" required>
 										<div class="valid-feedback">
 											Looks good!
 										  </div>
 									</div>
 									<div class="col-md-6">
-										<label for="bsValidation2" class="form-label">Last Name</label>
-										<input type="text" class="form-control" id="bsValidation2" placeholder="Last Name" name="lname" value="Deo" required>
+										<label for="bsValidation2" class="form-label">Total Days</label>
+										<input type="text" class="form-control" id="bsValidation2" placeholder="Total Days" name="lname" required>
 										<div class="valid-feedback">
 											Looks good!
 										  </div>
 									</div>
+									
 									<div class="col-md-12">
-										<label for="bsValidation3" class="form-label">Phone</label>
-										<input type="text" class="form-control" id="bsValidation3" placeholder="Phone" name="phone" required>
-										<div class="invalid-feedback">
-											Please choose a username.
-										  </div>
-									</div>
-									<div class="col-md-12">
-										<label for="bsValidation4" class="form-label">Email</label>
-										<input type="email" class="form-control" id="bsValidation4" placeholder="Email" name="email" required>
-										<div class="invalid-feedback">
-											Please provide a valid email.
-										  </div>
-									</div>
-									<div class="col-md-12">
-										<label for="bsValidation5" class="form-label">Age</label>
+										<label for="bsValidation5" class="form-label">Leave Days</label>
 										<input type="number" class="form-control" id="bsValidation5"
-										name="age" placeholder="Enter age" required>
+										name="age" placeholder="Enter Leave Days" required>
 										
 									</div>
 									<div class="col-md-12">
-										<label for="bsValidation9" class="form-label">Last Education Digree</label>
+										<label for="bsValidation9" class="form-label">Leave Types</label>
 										<select id="bsValidation9" class="form-select" name="digree" required>
 											<option selected disabled value>...</option>
 											<option>MBA(HR Management)</option>
@@ -150,38 +137,6 @@
 										</div>
 									</div>
 									
-									<div class="col-md-6">
-										<label for="bsValidation10" class="form-label">Experience</label>
-										<input type="text" class="form-control" id="bsValidation10" name="exp" placeholder="Experience" required>
-										<div class="invalid-feedback">
-											Please provide a valid experience.
-										</div>
-									</div>
-									
-									
-									<div class="col-md-6">
-										<label for="bsValidation10" class="form-label">Position</label>
-										<input type="text" class="form-control" id="bsValidation10" name="position" placeholder="Enter position" required>
-										<div class="invalid-feedback">
-											Please provide a valid Position.
-										</div>
-									</div>
-									<div class="col-md-12">
-										<label for="bsValidation10" class="form-label">Bank Name</label>
-										<input type="text" class="form-control" id="bsValidation10" name="bname" placeholder="Bank Name" required>
-										<div class="invalid-feedback">
-											Please provide a valid Bank name.
-										</div>
-									<div class="col-md-12">
-										<label for="bsValidation4" class="form-label">Bank Account Number</label>
-										<input type="text" class="form-control" id="bsValidation11" placeholder="Acoount Number" name="ban" required>
-										<div class="invalid-feedback">
-											Please provide a valid Account Number.
-										  </div>
-									</div>
-									
-									
-									
 									<div class="col-md-12">
 										<div class="form-check">
 											<input class="form-check-input" type="checkbox" id="bsValidation14" required>
@@ -193,7 +148,7 @@
 									</div>
 									<div class="col-md-12">
 										<div class="d-md-flex d-grid align-items-center gap-3">
-											<button type="submit" class="btn btn-primary px-4" name="submit">Submit</button>
+											<button type="submit" class="btn btn-primary px-4" name="submit">Gnarate Process</button>
 											<button type="reset" class="btn btn-light px-4">Reset</button>
 										</div>
 									</div>

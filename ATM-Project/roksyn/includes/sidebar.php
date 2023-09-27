@@ -73,7 +73,7 @@
                     <div class="menu-title">Leave Modules</div>
                   </a>
                   <ul>
-                    <li> <a href="#"><span class="material-symbols-outlined">arrow_right</span>Leave Detailes</a>
+                    <li> <a href="leaves_entry.php"><span class="material-symbols-outlined">arrow_right</span>Leave Detailes</a>
                     </li>
                     <li> <a href="live_event.php"><span class="material-symbols-outlined">arrow_right</span>Leave Aplication</a>
                     </li>

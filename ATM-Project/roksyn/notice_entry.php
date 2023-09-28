@@ -82,7 +82,7 @@
 							<?php 
 							if(isset($_POST['submit2'])){
                 extract($_POST);
-                // print_r("INSERT INTO notices(subject, notice_date, notice_time, description) VALUES('$subject', '$date', '$time', '$des')");
+                echo "INSERT INTO notices(subject, notice_date, notice_time, description) VALUES('$subject', '$date', '$time', '$des')";
                 echo "INSERT INTO notices(subject, notice_date, notice_time, description) VALUES('$subject', '$date', '$time', '$des')";
 
                 $sql = "INSERT INTO notices(subject, notice_date, notice_time, description) VALUES('$subject', '$date', '$time', '$des')";
@@ -104,7 +104,7 @@
 										<label for="input36" class="col-sm-3 col-form-label">Notice Date</label>
 										<div class="col-sm-9">
                     <div class="input-group date" id="datepicker">
-                        <input type="text"  class="form-control" id="input36" name="date">
+                        <input type="date"  class="form-control" id="input36" name="date">
                       </div>
 											
 										</div>
@@ -270,11 +270,11 @@
 			})()
 	</script>
   <script>
-    $(function () {
-      $('#datepicker').datepicker({
-      format:'yyyy-mm-dd'
-    });
-    });
+    // $(function () {
+    //   $('#datepicker').datepicker({
+    //   format:'yyyy-mm-dd'
+    // });
+    // });
     
   </script>
 

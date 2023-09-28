@@ -1,3 +1,4 @@
+<?php $db = new mysqli("localhost","root", "", "hrm_project"); ?>
 <!doctype html>
 <html lang="en" data-bs-theme="dark">
   <head>
@@ -10,6 +11,7 @@
     <link href="assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet">
     <link href="assets/plugins/metismenu/css/metisMenu.min.css" rel="stylesheet">
     <link href="assets/plugins/simplebar/css/simplebar.css" rel="stylesheet">
+    <link href="assets/plugins/datatable/css/dataTables.bootstrap5.min.css" rel="stylesheet">
     <!-- loader-->
 	<link href="assets/css/pace.min.css" rel="stylesheet">
 	<script src="assets/js/pace.min.js"></script>
@@ -27,28 +29,28 @@
      
   </head>
   <body>
-
+	
     <!--start header-->
-    <?php require_once("includes/topbar.php"); ?>
-    <!--end header-->
+	<?php require_once("includes/topbar.php"); ?>
+	<!--end header-->
 
 
-    <!--start sidebar-->
-     <?php require_once("includes/sidebar.php"); ?>
-    <!--end sidebar-->
+	<!--start sidebar-->
+	 <?php require_once("includes/sidebar.php"); ?>
+	<!--end sidebar-->
 
 
     <!--start main content-->
      <main class="page-content">
         <!--breadcrumb-->
 				<div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-					<div class="breadcrumb-title pe-3">Forms</div>
+					<div class="breadcrumb-title pe-3">Tables</div>
 					<div class="ps-3">
 						<nav aria-label="breadcrumb">
 							<ol class="breadcrumb mb-0 p-0">
 								<li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
 								</li>
-								<li class="breadcrumb-item active" aria-current="page">Validations</li>
+								<li class="breadcrumb-item active" aria-current="page">Data Table</li>
 							</ol>
 						</nav>
 					</div>
@@ -67,69 +69,58 @@
 				</div>
 				<!--end breadcrumb-->
 
-  
-       
-				<!--end row-->
+        
+				<h6 class="mb-0 text-uppercase">All Notice History</h6>
+				<hr>
+				<div class="card">
+					<div class="card-body">
+						<div class="table-responsive">
+							<table id="example2" class="table table-striped table-bordered">
+								<thead>
+									<tr>
+										<th>Subject</th>
+										<th>notice Date</th>
+										<th>notice Time</th>
+										<th>description</th>
+										
+									</tr>
+								</thead>
 
-				<div class="row">
-                    <div class="col-lg-8 mx-auto">
-						<div class="card">
-							<div class="card-header px-4 py-3 bg-transparent">
-								<h5 class="mb-0">jQuery Validation</h5>
-							</div>
-							<div class="card-body p-4">
-								<form id="jQueryValidationForm">
-									<div class="row mb-3">
-										<label for="input35" class="col-sm-3 col-form-label">Subject</label>
-										<div class="col-sm-9">
-											<input type="text" class="form-control" id="input35" name="yourname" placeholder="Enter Your Name">
-										</div>
-									</div>
-									<div class="row mb-3">
-										<label for="input36" class="col-sm-3 col-form-label">Event Date</label>
-										<div class="col-sm-9">
-											<input type="date" class="form-control" id="input36" name="phone" placeholder="Phone No">
-										</div>
-									</div>
-									<div class="row mb-3">
-										<label for="input37" class="col-sm-3 col-form-label">Event Time</label>
-										<div class="col-sm-9">
-											<input type="time" class="form-control" id="input37" name="username" placeholder="Email Address">
-										</div>
-									</div>
-									
-									<div class="row mb-3">
-										<label for="input40" class="col-sm-3 col-form-label">Discription</label>
-										<div class="col-sm-9">
-											<textarea class="form-control" id="input40" name="address" rows="3" placeholder="discription"></textarea>
-										</div>
-									</div>
-									<div class="row mb-3">
-										<label class="col-sm-3 col-form-label"></label>
-										<div class="col-sm-9">
-											<div class="form-check">
-												<input class="form-check-input" type="checkbox" id="input41" name="agree">
-												<label class="form-check-label" for="input41">Check me out</label>
-											</div>
-										</div>
-									</div>
-									<div class="row">
-										<label class="col-sm-3 col-form-label"></label>
-										<div class="col-sm-9">
-											<div class="d-md-flex d-grid align-items-center gap-3">
-												<button type="submit" class="btn btn-primary px-4" name="submit2">Submit</button>
-												<button type="reset" class="btn btn-light px-4">Reset</button>
-											</div>
-										</div>
-									</div>
-								</form>
+								<tbody>
 
-							</div>
+								<?php 
+								$sql ="SELECT * FROM notices";
+								$result =$db->query($sql);
+
+								while($row= $result->fetch_assoc()){ ?>
+									<tr>
+										<td> <?php echo $row['subject'] ?></td>
+										<td> <?php echo $row['notice_date'] ?></td>
+										<td> <?php echo $row['notice_time'] ?></td>
+										<td> <?php echo $row['description'] ?></td>
+										
+									</tr>
+
+
+								<?php } ?>
+
+								
+								
+
+									</tbody>
+								<tfoot>
+								<tr>
+										<th>Subject</th>
+										<th>Event Date</th>
+										<th>Event Time</th>
+										<th>description</th>
+										
+									</tr>
+								</tfoot>
+							</table>
 						</div>
 					</div>
 				</div>
-				<!--end row-->
-
 
      </main>
      <!--end main content-->
@@ -189,68 +180,62 @@
 
     <!--start theme customization-->
     <div class="offcanvas offcanvas-end" tabindex="-1" id="ThemeCustomizer" aria-labelledby="ThemeCustomizerLable">
-      <div class="offcanvas-header border-bottom">
-        <h5 class="offcanvas-title" id="ThemeCustomizerLable">Theme Customizer</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-      </div>
-      <div class="offcanvas-body">
-        <h6 class="mb-0">Theme Variation</h6>
-        <hr>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="LightTheme" value="option1">
-          <label class="form-check-label" for="LightTheme">Light</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="DarkTheme" value="option2" checked="">
-          <label class="form-check-label" for="DarkTheme">Dark</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="SemiDarkTheme" value="option3">
-          <label class="form-check-label" for="SemiDarkTheme">Semi Dark</label>
-        </div>
-        <hr>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="MinimalTheme" value="option3">
-          <label class="form-check-label" for="MinimalTheme">Minimal Theme</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="ShadowTheme" value="option4">
-          <label class="form-check-label" for="ShadowTheme">Shadow Theme</label>
-        </div>
-       
-      </div>
-    </div>
-    <!--end theme customization-->
+		<div class="offcanvas-header border-bottom">
+		  <h5 class="offcanvas-title" id="ThemeCustomizerLable">Theme Customizer</h5>
+		  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+		</div>
+		<div class="offcanvas-body">
+		  <h6 class="mb-0">Theme Variation</h6>
+		  <hr>
+		  <div class="form-check form-check-inline">
+			<input class="form-check-input" type="radio" name="inlineRadioOptions" id="LightTheme" value="option1">
+			<label class="form-check-label" for="LightTheme">Light</label>
+		  </div>
+		  <div class="form-check form-check-inline">
+			<input class="form-check-input" type="radio" name="inlineRadioOptions" id="DarkTheme" value="option2" checked="">
+			<label class="form-check-label" for="DarkTheme">Dark</label>
+		  </div>
+		  <div class="form-check form-check-inline">
+			<input class="form-check-input" type="radio" name="inlineRadioOptions" id="SemiDarkTheme" value="option3">
+			<label class="form-check-label" for="SemiDarkTheme">Semi Dark</label>
+		  </div>
+		  <hr>
+		  <div class="form-check form-check-inline">
+			<input class="form-check-input" type="radio" name="inlineRadioOptions" id="MinimalTheme" value="option3">
+			<label class="form-check-label" for="MinimalTheme">Minimal Theme</label>
+		  </div>
+		  <div class="form-check form-check-inline">
+			<input class="form-check-input" type="radio" name="inlineRadioOptions" id="ShadowTheme" value="option4">
+			<label class="form-check-label" for="ShadowTheme">Shadow Theme</label>
+		  </div>
+		 
+		</div>
+	  </div>
+	  <!--end theme customization-->
 
    <!--plugins-->
    <script src="assets/js/jquery.min.js"></script>
    <script src="assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
    <script src="assets/plugins/metismenu/js/metisMenu.min.js"></script>
    <script src="assets/plugins/simplebar/js/simplebar.min.js"></script>
-   <script src="assets/plugins/validation/jquery.validate.min.js"></script>
-	<script src="assets/plugins/validation/validation-script.js"></script>
-	<script>
-		// Example starter JavaScript for disabling form submissions if there are invalid fields
-			(function () {
-			  'use strict'
-	
-			  // Fetch all the forms we want to apply custom Bootstrap validation styles to
-			  var forms = document.querySelectorAll('.needs-validation')
-	
-			  // Loop over them and prevent submission
-			  Array.prototype.slice.call(forms)
-				.forEach(function (form) {
-				  form.addEventListener('submit', function (event) {
-					if (!form.checkValidity()) {
-					  event.preventDefault()
-					  event.stopPropagation()
-					}
-	
-					form.classList.add('was-validated')
-				  }, false)
-				})
-			})()
-	</script>
+   <script src="assets/plugins/datatable/js/jquery.dataTables.min.js"></script>
+   <script src="assets/plugins/datatable/js/dataTables.bootstrap5.min.js"></script>
+	 <script>
+		$(document).ready(function() {
+			$('#example').DataTable();
+		  } );
+	 </script>
+	 <script>
+		$(document).ready(function() {
+			var table = $('#example2').DataTable( {
+				lengthChange: false,
+				buttons: [ 'copy', 'excel', 'pdf', 'print']
+			} );
+		 
+			table.buttons().container()
+				.appendTo( '#example2_wrapper .col-md-6:eq(0)' );
+		} );
+	 </script>
 
     <!--BS Scripts-->
     <script src="assets/js/bootstrap.bundle.min.js"></script>

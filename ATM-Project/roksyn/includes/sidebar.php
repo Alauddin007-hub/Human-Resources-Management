@@ -126,7 +126,7 @@
                     <div class="menu-title">Salary Pay Role</div>
                   </a>
                   <ul>
-                    <li> <a href="notice_entry.php"><span class="material-symbols-outlined">arrow_right</span>Salary Sheet</a>
+                    <li> <a href="Salary_sheet.php"><span class="material-symbols-outlined">arrow_right</span>Salary Sheet</a>
                     </li>
                   </ul>
                   <ul>
